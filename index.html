@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun Game</title>
+    
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"></script>
+
+    <style>
+        /* Make the spline viewer cover the entire background */
+        spline-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        /* Bring all game content above the 3D background */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <spline-viewer url="https://prod.spline.design/97aZGRSRh5WkvAQl/scene.splinecode"></spline-viewer>
+    <div class="game-container">
+        <h1>🐍 Snake 💧 Water 🔫 Gun</h1>
+        
+        <div class="score">
+            <span>Your Score: <span id="userScore">0</span></span>
+            <span>Computer Score: <span id="computerScore">0</span></span>
+        </div>
+        
+        <div class="choices">
+            <button class="btn" data-choice="snake">
+                <span class="emoji">🐍</span>
+                <span class="btn-label">Snake</span>
+            </button>
+            <button class="btn" data-choice="water">
+                <span class="emoji">💧</span>
+                <span class="btn-label">Water</span>
+            </button>
+            <button class="btn" data-choice="gun">
+                <span class="emoji">🔫</span>
+                <span class="btn-label">Gun</span>
+            </button>
+        </div>
+        
+        <div class="result">
+            <p id="userChoice">Make your choice!</p>
+            <p id="computerChoice">Computer is waiting...</p>
+            <p id="winner"></p>
+        </div>
+        
+        <div class="reset-container">
+            <button id="resetBtn">Reset Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
